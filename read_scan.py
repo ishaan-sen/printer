@@ -37,7 +37,7 @@ sharp = np.array([
                  ])
 
 
-out = convolve2d(out, sharp)
+# out = convolve2d(out, sharp)
 print(out.shape)
 plt.imshow(out[2:-2, ::-1])
 plt.show()

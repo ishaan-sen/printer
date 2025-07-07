@@ -24,15 +24,15 @@ print(set_abs_pos())
 
 # exit()
 images = []
-for x in np.linspace(90, 130, 20):
+for x in np.linspace(90, 130, 160):
     images.append([])
     print("x=", x)
     print(move_gantry(x, 120))
     sleep(1)
-    print(move_gantry(x, 80, f=30*60))
+    print(move_gantry(x, 80, f=5*60))
     # sleep(0.1)
     print("recording")
-    for i in range(30): # idk how long this'll take
+    for i in range(200): # idk how long this'll take
         ret, frame = cap.read()
         
         frame = frame[300:600, 300:600]
