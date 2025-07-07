@@ -24,15 +24,15 @@ print(set_abs_pos())
 
 # exit()
 images = []
-for x in np.linspace(90, 130, 160):
+for x in np.linspace(90, 130, 160): # x bounds and the number of rows to scan
     images.append([])
     print("x=", x)
-    print(move_gantry(x, 120))
+    print(move_gantry(x, 120)) # y bound 1
     sleep(1)
-    print(move_gantry(x, 80, f=5*60))
+    print(move_gantry(x, 80, f=5*60)) # y bound 2
     # sleep(0.1)
     print("recording")
-    for i in range(200): # idk how long this'll take
+    for i in range(200): # number of frames to capture, this is the other dimension of the output
         ret, frame = cap.read()
         
         frame = frame[300:600, 300:600]
